@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>index 页面</h1>
+<div id="msg"></div>
+
+<div id="btn">点击按钮</div>
+
+</body>
+<script src="components/jquery/dist/jquery.min.js"></script>
+<script>
+    btn.onclick=function () {
+//        alert('点击');
+        $.ajax({
+            url:'/a',
+            type:'get',
+            success:function (data) {
+                console.log('ok',data);
+                if(data.success){
+                    $('#msg').append(data.obj.name)
+                }
+
+
+            }
+        })
+    }
+
+</script>
+</html>
